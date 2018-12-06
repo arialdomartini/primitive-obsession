@@ -1,9 +1,8 @@
-﻿using System.Configuration;
-using FluentAssertions;
-using Primitive;
+﻿using FluentAssertions;
+using PrimitiveObsession;
 using Xunit;
 
-namespace PrimitiveTest
+namespace PrimitiveObsessionTest
 {
     public class PrimitiveTest
     {

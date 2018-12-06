@@ -1,4 +1,4 @@
-﻿namespace Primitive
+﻿namespace PrimitiveObsession
 {
     public class Primitive<T>
     {

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Primitive", "Primitive\Primitive.csproj", "{6B4B532F-4F9F-404B-BD50-172E41B0E0B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveObsession", "PrimitiveObsession\PrimitiveObsession.csproj", "{6B4B532F-4F9F-404B-BD50-172E41B0E0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveTest", "PrimitiveTest\PrimitiveTest.csproj", "{8778FF8A-F7E2-48BF-8D1B-D62AF00CD097}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveTest", "PrimitiveObsessionTest\PrimitiveObsessionTest.csproj", "{8778FF8A-F7E2-48BF-8D1B-D62AF00CD097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
