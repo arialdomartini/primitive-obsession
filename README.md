@@ -3,6 +3,23 @@ Primitive
 A simple library to deal with [Primitive Obsession](http://wiki.c2.com/?PrimitiveObsession) in C#.
 
 ## Usage
+### Installation
+The library is available as a [NuGet package](https://www.nuget.org/packages/PrimitiveObsession/), which can be installed from the command line with:
+
+
+```bash
+dotnet add package PrimitiveObsession --version 1.0.2
+```
+or with:
+
+```
+Install-Package PrimitiveObsession
+```
+
+in the Package Manager console.
+
+### Usage in the source code
+
 To replace a primitive of type `T` with a non-primitive class, just define the custom class and let it extend `Primitive<T>`.
 
 For example, in a class `Foo` defined as:
@@ -33,7 +50,7 @@ public class ConnectionString : Primitive<string> { }
 public class MaxUsers : Primitive<int> { }
 ```
 
-### Assigning the instance a value
+#### Assigning the instance a value
 Use the default constructor and assign the property `Value` a value. For example:
 
 ```csharp
@@ -84,7 +101,7 @@ public class ConnectionString : Primitive<string>
 In an ideal world the operator could be defined in the base class and automatically inherited by your classes. Unfortunately, this does not work, because the operator is static and it won't be inherited at all, and it would result in the conversion to `Primitive<string>` instead of to `ConnectionString`, causing an exception at runtime. For more details, see the discussion on StackOverflow at the questions [implicit operator on generic type](https://stackoverflow.com/questions/3823145/implicit-operator-on-generic-types) and [Are implicity/explicit conversion methods inherited in C#?](https://stackoverflow.com/questions/967630/are-implicity-explicit-conversion-methods-inherited-in-c).
 
 
-### Conversion to primitive
+#### Conversion to primitive
 A class extending `Primitive<T>` can be converted back to the primitive `T` both implicitly and explicitily:
 
 ```csharp
