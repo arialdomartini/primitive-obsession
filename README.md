@@ -3,7 +3,7 @@ Primitive
 A simple library to deal with [Primitive Obsession](http://wiki.c2.com/?PrimitiveObsession) in C#.
 
 ## Usage
-To replace a primitive of type `T` with a custom class, just define the class and let it extend `Primitive<T>`.
+To replace a primitive of type `T` with a non-primitive class, just define the custom class and let it extend `Primitive<T>`.
 
 For example, in a class `Foo` defined as:
 
@@ -57,7 +57,7 @@ which makes it possible to write:
 var connectionString = new ConnectionString{ Value = "User ID=root;Host=localhost;Port=5432" };
 ```
 #### Assigning the instance a value with implicit conversion
-The most convenient way to assign a value is to use an implicit conversion, which make it possible to use the non-primitive property as it was a primitive:
+The most convenient way to assign a value is to use an implicit conversion, which makes it possible to use the non-primitive property as it was a primitive:
 
 ```csharp
 public class Foo
@@ -70,7 +70,7 @@ var foo = new Foo();
 foo.MaxUsers = 100;
 ```
 
-This unfortunately requires that the implicit operator to be defined in each non-primitive class, like the following:
+Unfortunately, this requires that the implicit operator is manually defined in each non-primitive class, like the following:
 
 
 ```csharp
@@ -81,7 +81,7 @@ public class ConnectionString : Primitive<string>
 }
 ```
 
-This implicit operator cannot be defined in the base class, as it would not be inherited, and would result in the conversion to `Primitive<string>` instead of to `ConnectionString`, causing an exception at runtime (see the discussion on StackOverflow at the questions [implicit operator on generic type](https://stackoverflow.com/questions/3823145/implicit-operator-on-generic-types) and [Are implicity/explicit conversion methods inherited in C#?](https://stackoverflow.com/questions/967630/are-implicity-explicit-conversion-methods-inherited-in-c)).
+In an ideal world the operator could be defined in the base class and automatically inherited by your classes. Unfortunately, this does not work, because the operator is static and it won't be inherited at all, and it would result in the conversion to `Primitive<string>` instead of to `ConnectionString`, causing an exception at runtime. For more details, see the discussion on StackOverflow at the questions [implicit operator on generic type](https://stackoverflow.com/questions/3823145/implicit-operator-on-generic-types) and [Are implicity/explicit conversion methods inherited in C#?](https://stackoverflow.com/questions/967630/are-implicity-explicit-conversion-methods-inherited-in-c).
 
 
 ### Conversion to primitive
