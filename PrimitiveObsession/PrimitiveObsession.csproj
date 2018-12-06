@@ -3,9 +3,9 @@
     <PropertyGroup>
         <PackageId>PrimitiveObsession</PackageId>
         <Title>A dead simple library to deal with the Primitive Obsession smell</Title>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <Authors>Arialdo Martini</Authors>
-        
+        <PackageProjectUrl>https://github.com/arialdomartini/primitive-obsession</PackageProjectUrl>
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
