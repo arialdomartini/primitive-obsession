@@ -127,7 +127,7 @@ dotnet pack -c release -o .
 Publish it with:
 
 ```bash
-nuget push PrimitiveObsession.1.0.0.nupkg -k <APIKEY> -s https://api.nuget.org/v3/index.json
+dotnet nuget push PrimitiveObsession/[nupkg_file] -k [apikey] -s https://api.nuget.org/v3/index.json
 ```
 
-replacing the proper `APIKEY` with the API Key managed by the [NuGet account page](https://www.nuget.org/account/apikeys).
+replacing `apikey` with the API Key managed by the [NuGet account page](https://www.nuget.org/account/apikeys).
