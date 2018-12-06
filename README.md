@@ -108,11 +108,26 @@ Run:
 dotnet build
 ```
 
-## Run tests
+### Run tests
 Run:
 
-```
+```bash
 dotnet test PrimitiveTest/PrimitiveTest.csproj
 ```
 
 It should be possible to run tests with a simpler `dotnet test`, but I run in the issue ['dotnet test' in solution folder fails when non-test projects are in the solution #1129](http://wiki.c2.com/?PrimitiveObsession)
+
+### NuGet package
+Create the NuGet package with:
+
+```bash
+dotnet pack -c release -o .
+```
+
+Publish it with:
+
+```bash
+nuget push PrimitiveObsession.1.0.0.nupkg -k <APIKEY> -s https://api.nuget.org/v3/index.json
+```
+
+replacing the proper `APIKEY` with the API Key managed by the [NuGet account page](https://www.nuget.org/account/apikeys).

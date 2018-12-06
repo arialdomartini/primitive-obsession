@@ -1,6 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
     
     <PropertyGroup>
+        <PackageId>PrimitiveObsession</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Arialdo Martini</Authors>
+        
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
